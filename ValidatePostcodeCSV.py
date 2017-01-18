@@ -1,4 +1,3 @@
-import RegexHelper
 import csv
 import re
 import os.path
