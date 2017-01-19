@@ -22,7 +22,7 @@ pattern = """(GIR\s0AA) |^
           )
           # 9AA suffix
         \s[0-9][ABD-HJLNP-UW-Z]{2}
-        )"""
+        )$"""
 regex_helper = Regex_helpers(pattern)
 
 
