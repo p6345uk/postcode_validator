@@ -3,7 +3,7 @@ import re
 import os.path
 
 
-class regex_helper(object):
+class Regex_helpers(object):
     def __init__(self, pattern):
         self.compiled_regex = re.compile(pattern, re.X)
 
@@ -11,7 +11,7 @@ class regex_helper(object):
         return self.compiled_regex.match(string)
 
 
-class validator(object):
+class Validator(object):
     passed_validation = {}
     failed_validation = {}
     is_input_file_found = False
@@ -39,7 +39,7 @@ class validator(object):
                   # 9AA suffix
                 \s[0-9][ABD-HJLNP-UW-Z]{2}
                 )"""
-        self.validator = regex_helper(pattern=pattern)
+        self.validator = Regex_helpers(pattern=pattern)
         self.input_file = input_file
 
     def validate(self):

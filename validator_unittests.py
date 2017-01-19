@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import unittest
-from validator import regex_helper
+from validator import Regex_helpers
 
 pattern = """(GIR\s0AA) |^
     (
@@ -23,12 +23,12 @@ pattern = """(GIR\s0AA) |^
           # 9AA suffix
         \s[0-9][ABD-HJLNP-UW-Z]{2}
         )"""
-regex_helper = regex_helper(pattern)
+regex_helper = Regex_helpers(pattern)
 
 
-class test_validator(unittest.TestCase):
+class Test_validator(unittest.TestCase):
     def test_junk(self):
-        self.assertEqual(regex_helper.match_string("$%±()()"), None)
+        self.assertEqual(regex_helper.match_string('$%±()()'), None)
 
     def test_invalid(self):
         self.assertEqual(regex_helper.match_string('XX XXX'), None)
