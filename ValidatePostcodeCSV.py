@@ -1,13 +1,18 @@
 import csv
 import re
 import os.path
+
+
 class RegexHelper(object):
-    def __init__(self,pattern):
+    def __init__(self, pattern):
         self.compiled_regex = re.compile(pattern)
-    def match_string(self,string):
+
+    def match_string(self, string):
         return self.compiled_regex.match(string)
+
+
 class Validate(object):
-    def __init__(self,input_file):
+    def __init__(self, input_file):
         self.error_occured = bool(0)
         self.is_input_file_found = bool(0)
         try:
@@ -15,7 +20,7 @@ class Validate(object):
             self.validator = RegexHelper(pattern=pattern)
             self.input_file = input_file
             self.is_input_file_found = os.path.isfile(self.input_file)
-            if( self.is_input_file_found ):
+            if (self.is_input_file_found):
                 self.passed_validation = {}
                 self.failed_validation = {}
                 with open(self.input_file, 'rb') as csvfile:
@@ -35,17 +40,19 @@ class Validate(object):
         except ValueError:
             self.error_occured = bool(1)
             print "Failed to parse CSV file"
-    def write_csv(self,path,csv_type):
+
+    def write_csv(self, path, csv_type):
         if (not self.error_occured):
             if csv_type == "success":
                 self.csv_type_list = self.passed_validation
-                self.write_csv_file(path, data_to_export = self.csv_type_list )
-            elif csv_type =="failed":
+                self.write_csv_file(path, data_to_export=self.csv_type_list)
+            elif csv_type == "failed":
                 self.csv_type_list = self.failed_validation
-                self.write_csv_file(path, data_to_export = self.csv_type_list )
+                self.write_csv_file(path, data_to_export=self.csv_type_list)
             else:
                 print("CSV type not found")
-    def write_csv_file(self,path,data_to_export):
+
+    def write_csv_file(self, path, data_to_export):
         self.data_to_export = data_to_export
         if (not self.error_occured):
             print("Write CSV")
