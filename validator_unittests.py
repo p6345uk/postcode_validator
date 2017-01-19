@@ -28,7 +28,7 @@ regex_helper = regex_helper(pattern)
 
 class test_validator(unittest.TestCase):
     def test_junk(self):
-        self.assertEqual(regex_helper.match_string("$%±()()"), None)
+        self.assertEqual(regex_helper.match_string(u"$%±()()"), None)
 
     def test_invalid(self):
         self.assertEqual(regex_helper.match_string('XX XXX'), None)
