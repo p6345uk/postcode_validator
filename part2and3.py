@@ -1,19 +1,22 @@
-import ValidatePostcodeCSV
 import time
+from validator import validator
 
-start = time.time()
-print("Part 2 - Bulk import - Begin")
-validator_part2 = ValidatePostcodeCSV.Validate(input_file='/home/pslinux/Downloads/import_data.csv')
-validator_part2.write_csv(path='/home/pslinux/Downloads/failed_validation.csv', csv_type='failed')
-print("Part 2 - Bulk import - End")
-end = time.time()
-print(end - start)
+if __name__ == '__main__':
+    start = time.time()
+    print("Part 2 - Bulk import - Begin")
+    validator_part2 = validator('/home/pslinux/Downloads/import_data.csv')
+    validator_part2.validate()
+    validator_part2.write_csv('/home/pslinux/Downloads/failed_validation.csv', 'failed')
+    print("Part 2 - Bulk import - End")
+    end = time.time()
+    print(end - start)
 
-start = time.time()
-print("Part 3 - Performance engineering - Begin")
-validator = ValidatePostcodeCSV.Validate(input_file='/home/pslinux/Downloads/import_data.csv')
-validator.write_csv(path='/home/pslinux/Downloads/failed_validation.csv', csv_type='failed')
-validator.write_csv(path='/home/pslinux/Downloads/succeeded_validation.csv', csv_type='success')
-print("Part 3 - Performance engineering - End")
-end = time.time()
-print(end - start)
+    start = time.time()
+    print("Part 3 - Performance engineering - Begin")
+    validator_part3 = validator('/home/pslinux/Downloads/import_data.csv')
+    validator_part3.validate()
+    validator_part3.write_csv('/home/pslinux/Downloads/failed_validation.csv', 'failed')
+    validator_part3.write_csv('/home/pslinux/Downloads/succeeded_validation.csv', 'success')
+    print("Part 3 - Performance engineering - End")
+    end = time.time()
+    print(end - start)
