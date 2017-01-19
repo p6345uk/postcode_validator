@@ -8,9 +8,9 @@ validator.py - Validator module
 
 validator_unittests.py - Unit test for part one of the assesment
 
-The Input and output file are specified in the part2and3.py file these should be update to your local paths
+The Input and Output file paths are specified in the part2and3.py file these should be update to your local paths
 
-Lines required to update to local to change below
+Lines required to update paths below
 
 Import_data.csv
 
