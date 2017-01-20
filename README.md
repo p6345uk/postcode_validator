@@ -9,7 +9,9 @@ validator.py - Validator module
 validator_unittests.py - Unit test for part one of the assesment
 
 The Input and Output file paths are specified in the part2and3.py file.
-i have the current directory specified as the location to locate and output the files
+
+i have the current directory specified as the location to locate the import_data.csv file and output the files
+
 To run the scripts place the unzipped import_data.csv file in the directory with the scripts 
 
 
