@@ -8,24 +8,9 @@ validator.py - Validator module
 
 validator_unittests.py - Unit test for part one of the assesment
 
-The Input and Output file paths are specified in the part2and3.py file these should be update to your local paths
-
-Lines required to update paths below
-
-Import_data.csv
-
-validator_part2 = Validator('/home/pslinux/Downloads/import_data.csv')
-validator_part3 = Validator('/home/pslinux/Downloads/import_data.csv')
-
-failed_validation.csv
-
-validator_part2.write_csv('/home/pslinux/Downloads/failed_validation.csv', 'failed')
-validator_part3.write_csv('/home/pslinux/Downloads/failed_validation.csv', 'failed')
-
-succeeded_validation.csv
-
-validator_part3.write_csv('/home/pslinux/Downloads/succeeded_validation.csv', 'success')
-
+The Input and Output file paths are specified in the part2and3.py file.
+i have the current directory specified as the location to locate and output the files
+To run the scripts place the unzipped import_data.csv file in the directory with the scripts 
 
 
 Part 1.
